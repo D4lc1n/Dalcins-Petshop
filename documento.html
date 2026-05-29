@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documento do Projeto - Dalcin's Petshop</title>
+</head>
+<body>
+
+    <h1>Documento do Projeto - Fase 1</h1>
+    <h2>Dalcin's Petshop</h2>
+    <p><b>Disciplina:</b> Fundamentos e Sistemas Web</p>
+    <p><b>Curso:</b> Analise e Desenvolvimento de Sistemas</p>
+    <p><b>Aluno:</b> D4lc1n</p>
+    <p><b>Fase:</b> 1 - Construcao das paginas HTML sem CSS e sem JavaScript</p>
+
+    <hr>
+
+    <!-- 1. OBJETIVO E METAS -->
+    <h2>1. Objetivo e Metas</h2>
+
+    <h3>Objetivo Geral</h3>
+    <p>
+        Desenvolver um sistema web de front-end para o Dalcin's Petshop,
+        permitindo que clientes visualizem os produtos e servicos do estabelecimento
+        de forma clara e organizada pela internet.
+    </p>
+
+    <h3>Objetivos Especificos / Metas</h3>
+    <ul>
+        <li>Criar paginas HTML validas e bem estruturadas para apresentacao do petshop.</li>
+        <li>Exibir ao menos 3 categorias de produtos com 2 produtos cada (foto, descricao e valor).</li>
+        <li>Listar os servicos oferecidos com descricao, valor e indicacao de tele-busca.</li>
+        <li>Incluir cabecalho (header) com nome do petshop e menu de navegacao em todas as paginas.</li>
+        <li>Incluir rodape (footer) com informacoes legais, contato e links de navegacao.</li>
+        <li>Disponibilizar pagina de ajuda descrevendo as funcionalidades do sistema.</li>
+        <li>Publicar o sistema no GitHub Pages para acesso publico via internet.</li>
+    </ul>
+
+    <hr>
+
+    <!-- 2. ESTRUTURA DO PROJETO -->
+    <h2>2. Estrutura do Projeto</h2>
+
+    <h3>Paginas criadas:</h3>
+    <table border="1" cellpadding="8" cellspacing="0">
+        <tr>
+            <th>Arquivo</th>
+            <th>Descricao</th>
+        </tr>
+        <tr>
+            <td>index.html</td>
+            <td>Pagina inicial com apresentacao do petshop</td>
+        </tr>
+        <tr>
+            <td>produtos.html</td>
+            <td>Catalogo de produtos dividido em 3 categorias</td>
+        </tr>
+        <tr>
+            <td>servicos.html</td>
+            <td>Lista de servicos com valores e indicacao de tele-busca</td>
+        </tr>
+        <tr>
+            <td>contato.html</td>
+            <td>Informacoes de contato e formulario</td>
+        </tr>
+        <tr>
+            <td>ajuda.html</td>
+            <td>Descricao das funcionalidades do sistema</td>
+        </tr>
+        <tr>
+            <td>documento.html</td>
+            <td>Este documento com objetivo, metas e descricao tecnica</td>
+        </tr>
+    </table>
+
+    <hr>
+
+    <!-- 3. ARQUITETURA WEB -->
+    <h2>3. Arquitetura Web Utilizada</h2>
+
+    <h3>Tipo de Aplicacao Web</h3>
+    <p>
+        O sistema e uma <b>aplicacao web estatica</b>, ou seja, os arquivos HTML sao
+        entregues diretamente ao navegador do usuario sem processamento no servidor.
+        Nao ha banco de dados nem linguagem de programacao no servidor nesta fase.
+        Trata-se de um <b>site institucional</b> com multiplas paginas interligadas por hiperlinks.
+    </p>
+
+    <h3>Arquitetura Baseada em Servicos ou Microservicos?</h3>
+    <p>
+        <b>Nao.</b> Por se tratar de um site estatico na Fase 1, nao ha arquitetura de servicos
+        ou microservicos. Toda a logica esta contida nas proprias paginas HTML.
+        Em fases futuras, podera ser adotada uma arquitetura cliente-servidor com back-end
+        para gerenciar pedidos, cadastros e autenticacao de usuarios.
+    </p>
+
+    <h3>Dimensoes da Aplicacao Web</h3>
+    <ul>
+        <li><b>Apresentacao (Front-end):</b> Paginas HTML estruturadas com tags semanticas.</li>
+        <li><b>Dados:</b> Nesta fase, os dados (produtos e servicos) estao incorporados diretamente no HTML (dados estaticos).</li>
+        <li><b>Back-end:</b> Nao implementado na Fase 1. Previsto para fases futuras.</li>
+    </ul>
+
+    <hr>
+
+    <!-- 4. PROTOCOLOS -->
+    <h2>4. Protocolos Utilizados</h2>
+
+    <h3>Protocolos de Rede</h3>
+    <table border="1" cellpadding="8" cellspacing="0">
+        <tr>
+            <th>Protocolo</th>
+            <th>Camada</th>
+            <th>Funcao no Projeto</th>
+        </tr>
+        <tr>
+            <td>TCP/IP</td>
+            <td>Transporte / Internet</td>
+            <td>Responsavel pela transmissao confiavel dos dados entre cliente e servidor</td>
+        </tr>
+        <tr>
+            <td>DNS</td>
+            <td>Aplicacao</td>
+            <td>Traducao do nome de dominio (URL) para o endereco IP do servidor</td>
+        </tr>
+    </table>
+
+    <br>
+
+    <h3>Protocolos de Aplicacao</h3>
+    <table border="1" cellpadding="8" cellspacing="0">
+        <tr>
+            <th>Protocolo</th>
+            <th>Funcao no Projeto</th>
+        </tr>
+        <tr>
+            <td>HTTP / HTTPS</td>
+            <td>
+                Protocolo de transferencia de hipertexto. O navegador faz requisicoes HTTP GET
+                para o servidor (GitHub Pages), que responde com os arquivos HTML, imagens, etc.
+                O GitHub Pages utiliza HTTPS por padrao, garantindo criptografia na comunicacao.
+            </td>
+        </tr>
+        <tr>
+            <td>HTML (HyperText Markup Language)</td>
+            <td>
+                Linguagem de marcacao utilizada para estruturar todo o conteudo
+                das paginas do site. Versao utilizada: HTML5.
+            </td>
+        </tr>
+    </table>
+
+    <hr>
+
+    <!-- 5. FRONT-END E BACK-END -->
+    <h2>5. Front-end e Back-end</h2>
+
+    <h3>Front-end</h3>
+    <p>
+        O front-end e toda a parte visivel ao usuario no navegador.
+        Nesta fase, e composto exclusivamente por <b>HTML5</b>.
+        Nao foram utilizados CSS (folhas de estilo) nem JavaScript nesta etapa,
+        conforme requisito da Fase 1.
+    </p>
+    <p>Tecnologias de front-end utilizadas na Fase 1:</p>
+    <ul>
+        <li>HTML5 - estrutura e conteudo das paginas</li>
+        <li>Tags semanticas: &lt;header&gt;, &lt;nav&gt;, &lt;main&gt;, &lt;footer&gt;, &lt;table&gt;, &lt;form&gt;</li>
+        <li>Hiperlinks para navegacao entre paginas</li>
+        <li>Imagens via tag &lt;img&gt; com atributos alt para acessibilidade</li>
+    </ul>
+
+    <h3>Back-end</h3>
+    <p>
+        <b>Nao ha back-end implementado na Fase 1.</b>
+        O servidor utilizado e o <b>GitHub Pages</b>, que e um servidor de hospedagem
+        de arquivos estaticos. Ele entrega os arquivos HTML ao navegador sem nenhum
+        processamento dinamico. O formulario de contato existe na pagina, mas ainda
+        nao possui acao real de envio (sera implementado em fases futuras).
+    </p>
+
+    <hr>
+
+    <!-- 6. PADROES E FRAMEWORKS -->
+    <h2>6. Padroes e Frameworks</h2>
+
+    <h3>Padroes Utilizados</h3>
+    <ul>
+        <li>
+            <b>HTML5 (W3C):</b> As paginas seguem o padrao HTML5 definido pelo
+            World Wide Web Consortium (W3C), utilizando DOCTYPE, charset UTF-8,
+            meta viewport e tags semanticas.
+        </li>
+        <li>
+            <b>UTF-8:</b> Codificacao de caracteres utilizada em todas as paginas,
+            garantindo suporte correto a caracteres especiais do portugues.
+        </li>
+        <li>
+            <b>Acessibilidade basica:</b> Uso do atributo <i>alt</i> nas imagens
+            e atributos <i>for/id</i> nos formularios.
+        </li>
+    </ul>
+
+    <h3>Frameworks</h3>
+    <p>
+        <b>Nenhum framework foi utilizado na Fase 1.</b>
+        O requisito da disciplina determina que nesta etapa nao devem ser usados
+        CSS nem Bootstrap. O desenvolvimento e feito apenas com HTML puro.
+        O uso de Bootstrap (framework CSS) esta previsto para fases futuras.
+    </p>
+
+    <hr>
+
+    <!-- 7. HOSPEDAGEM -->
+    <h2>7. Hospedagem e Publicacao</h2>
+
+    <p>
+        O projeto e hospedado no <b>GitHub Pages</b>, servico gratuito do GitHub
+        que permite publicar sites estaticos diretamente de um repositorio.
+    </p>
+
+    <h3>Links do Projeto</h3>
+    <table border="1" cellpadding="8" cellspacing="0">
+        <tr>
+            <th>Recurso</th>
+            <th>Link</th>
+        </tr>
+        <tr>
+            <td>Repositorio GitHub (codigo-fonte)</td>
+            <td>https://github.com/D4lc1n/dalcins-petshop</td>
+        </tr>
+        <tr>
+            <td>Site publicado (GitHub Pages)</td>
+            <td>https://d4lc1n.github.io/dalcins-petshop</td>
+        </tr>
+    </table>
+
+    <br>
+    <p><a href="index.html">&lt;&lt; Voltar para o site</a></p>
+
+</body>
+</html>
