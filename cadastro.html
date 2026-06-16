@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendamento - Dalcin's Petshop</title>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Estilo personalizado -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- ==============================
+         CABEÇALHO
+         ============================== -->
+    <div class="faixa-topo">
+        <h1>🐾 Dalcin's Petshop</h1>
+        <p>Tudo para o seu pet com amor e cuidado!</p>
+        <p>Telefone: (51) 9 8765-4321 | Email: contato@dalcinspetshop.com.br</p>
+    </div>
+
+    <!-- Relógio e saudação -->
+    <div id="relogio"></div>
+
+    <!-- ==============================
+         MENU DE NAVEGAÇÃO
+         ============================== -->
+    <nav class="navbar navbar-expand-lg" aria-label="Menu principal">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">🐾 Petshop</a>
+            <button class="navbar-toggler" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#menuNav"
+                    aria-controls="menuNav" aria-expanded="false"
+                    aria-label="Abrir menu de navegação">
+                <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="menuNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
+                    <li class="nav-item"><a class="nav-link" href="produtos.html">Produtos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="servicos.html">Serviços</a></li>
+                    <li class="nav-item"><a class="nav-link" href="cadastro.html">Agendamento</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contato.html">Contato</a></li>
+                    <li class="nav-item"><a class="nav-link" href="ajuda.html">Ajuda</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ==============================
+         CORPO - FORMULÁRIO DE CADASTRO E AGENDAMENTO
+         ============================== -->
+    <main class="container mt-4">
+
+        <h2>Cadastro e Agendamento</h2>
+        <p>Preencha os dados abaixo para cadastrar seu pet e agendar um serviço.</p>
+
+        <form onsubmit="return validarFormulario()">
+
+            <!-- ---- SEÇÃO 1: DADOS DO CLIENTE ---- -->
+            <div class="card mb-4">
+                <div class="card-header">👤 Dados do Cliente</div>
+                <div class="card-body">
+
+                    <div class="row">
+
+                        <!-- Nome completo -->
+                        <div class="col-md-6 mb-3">
+                            <label for="nome" class="form-label">Nome completo: <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="nome" name="nome"
+                                   placeholder="Digite seu nome completo" required>
+                        </div>
+
+                        <!-- CPF -->
+                        <div class="col-md-6 mb-3">
+                            <label for="cpf" class="form-label">CPF: <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="cpf" name="cpf"
+                                   placeholder="000.000.000-00" maxlength="14" required>
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+
+                        <!-- E-mail -->
+                        <div class="col-md-6 mb-3">
+                            <label for="email" class="form-label">E-mail: <span class="text-danger">*</span></label>
+                            <input type="email" class="form-control" id="email" name="email"
+                                   placeholder="seuemail@exemplo.com" required>
+                        </div>
+
+                        <!-- Telefone -->
+                        <div class="col-md-6 mb-3">
+                            <label for="telefone" class="form-label">Telefone:</label>
+                            <input type="tel" class="form-control" id="telefone" name="telefone"
+                                   placeholder="(51) 9 0000-0000">
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+
+                        <!-- Endereço -->
+                        <div class="col-md-8 mb-3">
+                            <label for="endereco" class="form-label">Endereço:</label>
+                            <input type="text" class="form-control" id="endereco" name="endereco"
+                                   placeholder="Rua, número, bairro, cidade">
+                        </div>
+
+                        <!-- Sexo (radio button) -->
+                        <div class="col-md-4 mb-3">
+                            <label class="form-label">Sexo:</label><br>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio"
+                                       name="sexo" id="masculino" value="M">
+                                <label class="form-check-label" for="masculino">Masculino</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio"
+                                       name="sexo" id="feminino" value="F">
+                                <label class="form-check-label" for="feminino">Feminino</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio"
+                                       name="sexo" id="outro" value="O">
+                                <label class="form-check-label" for="outro">Outro</label>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- ---- SEÇÃO 2: DADOS DO PET ---- -->
+            <div class="card mb-4">
+                <div class="card-header">🐶 Dados do Pet</div>
+                <div class="card-body">
+
+                    <div class="row">
+
+                        <!-- Nome do pet -->
+                        <div class="col-md-4 mb-3">
+                            <label for="nome-pet" class="form-label">Nome do pet: <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="nome-pet" name="nome-pet"
+                                   placeholder="Nome do seu pet" required>
+                        </div>
+
+                        <!-- Raça -->
+                        <div class="col-md-4 mb-3">
+                            <label for="raca" class="form-label">Raça:</label>
+                            <input type="text" class="form-control" id="raca" name="raca"
+                                   placeholder="Ex: Labrador, Persa, SRD">
+                        </div>
+
+                        <!-- Idade -->
+                        <div class="col-md-4 mb-3">
+                            <label for="idade-pet" class="form-label">Idade (anos):</label>
+                            <input type="number" class="form-control" id="idade-pet" name="idade-pet"
+                                   min="0" max="30" placeholder="Ex: 3">
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+
+                        <!-- Espécie -->
+                        <div class="col-md-4 mb-3">
+                            <label for="especie" class="form-label">Espécie:</label>
+                            <select class="form-select" id="especie" name="especie">
+                                <option value="">-- Selecione --</option>
+                                <option value="cao">Cão</option>
+                                <option value="gato">Gato</option>
+                                <option value="outro">Outro</option>
+                            </select>
+                        </div>
+
+                        <!-- Porte -->
+                        <div class="col-md-4 mb-3">
+                            <label for="porte" class="form-label">Porte:</label>
+                            <select class="form-select" id="porte" name="porte">
+                                <option value="">-- Selecione --</option>
+                                <option value="P">Pequeno (até 10kg)</option>
+                                <option value="M">Médio (10 a 25kg)</option>
+                                <option value="G">Grande (acima de 25kg)</option>
+                            </select>
+                        </div>
+
+                        <!-- Observações -->
+                        <div class="col-md-4 mb-3">
+                            <label class="form-label">Características especiais:</label><br>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox"
+                                       id="nervoso" name="nervoso" value="sim">
+                                <label class="form-check-label" for="nervoso">Pet nervoso/agitado</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox"
+                                       id="idoso" name="idoso" value="sim">
+                                <label class="form-check-label" for="idoso">Pet idoso</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox"
+                                       id="alergia" name="alergia" value="sim">
+                                <label class="form-check-label" for="alergia">Possui alergias</label>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- ---- SEÇÃO 3: ESCOLHA DO SERVIÇO ---- -->
+            <div class="card mb-4">
+                <div class="card-header">✂️ Escolha do Serviço</div>
+                <div class="card-body">
+
+                    <label class="form-label">Serviço desejado: <span class="text-danger">*</span></label><br>
+
+                    <!-- Radio buttons para serviço (apenas banho e tosa conforme enunciado) -->
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio"
+                               name="servico" id="banho" value="banho" required>
+                        <label class="form-check-label" for="banho">
+                            Banho Simples — a partir de R$ 50,00
+                        </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio"
+                               name="servico" id="banho-tosa" value="banho-tosa">
+                        <label class="form-check-label" for="banho-tosa">
+                            Banho e Tosa — a partir de R$ 90,00
+                        </label>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- ---- SEÇÃO 4: MÉTODO DE AGENDAMENTO ---- -->
+            <div class="card mb-4">
+                <div class="card-header">📅 Agendamento</div>
+                <div class="card-body">
+
+                    <!-- Método: tele-busca ou entrega no local -->
+                    <div class="mb-3">
+                        <label class="form-label">Método de entrega: <span class="text-danger">*</span></label><br>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio"
+                                   name="metodo" id="telebusca" value="telebusca"
+                                   onclick="toggleTelebusca()" required>
+                            <label class="form-check-label" for="telebusca">
+                                🚗 Tele-busca (buscamos em casa) — Taxa: R$ 20,00
+                            </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio"
+                                   name="metodo" id="local" value="local"
+                                   onclick="toggleTelebusca()">
+                            <label class="form-check-label" for="local">
+                                🏠 Entrega no local (trago meu pet)
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Campo de endereço para tele-busca (mostrado via JavaScript) -->
+                    <div id="secao-endereco" class="mb-3 p-3 bg-light rounded">
+                        <label for="endereco-busca" class="form-label">
+                            Endereço para busca: <span class="text-danger">*</span>
+                        </label>
+                        <input type="text" class="form-control" id="endereco-busca"
+                               name="endereco-busca"
+                               placeholder="Rua, número, bairro, cidade, CEP">
+                        <small class="text-muted">Raio de até 5km do petshop. Taxa: R$ 20,00.</small>
+                    </div>
+
+                    <!-- Data e horário do agendamento -->
+                    <div class="row">
+
+                        <div class="col-md-6 mb-3">
+                            <label for="data-agendamento" class="form-label">
+                                Data do agendamento: <span class="text-danger">*</span>
+                            </label>
+                            <input type="date" class="form-control" id="data-agendamento"
+                                   name="data-agendamento" required>
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <label for="hora-agendamento" class="form-label">
+                                Horário: <span class="text-danger">*</span>
+                            </label>
+                            <input type="time" class="form-control" id="hora-agendamento"
+                                   name="hora-agendamento" min="08:00" max="17:00" required>
+                            <small class="text-muted">Atendimento: 08h00 às 17h00</small>
+                        </div>
+
+                    </div>
+
+                    <!-- Observações gerais -->
+                    <div class="mb-3">
+                        <label for="observacoes" class="form-label">Observações:</label>
+                        <textarea class="form-control" id="observacoes" name="observacoes"
+                                  rows="3" placeholder="Informe algo importante sobre seu pet ou o serviço..."></textarea>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Botões de ação -->
+            <div class="mb-4">
+                <button type="submit" class="btn btn-petshop me-2">✔ Confirmar Agendamento</button>
+                <button type="reset" class="btn btn-secondary">✖ Limpar Formulário</button>
+            </div>
+
+            <p class="text-muted"><small><span class="text-danger">*</span> Campos obrigatórios</small></p>
+
+        </form>
+
+    </main>
+
+    <!-- ==============================
+         RODAPÉ
+         ============================== -->
+    <footer>
+        <p><strong>Dalcin's Petshop</strong></p>
+        <p>CNPJ: 12.345.678/0001-99 | Rua dos Animais, 123 - Santa Cruz do Sul-RS</p>
+        <p>Telefone: (51) 9 8765-4321 | Email: contato@dalcinspetshop.com.br</p>
+        <p>
+            <a href="index.html">Início</a> |
+            <a href="produtos.html">Produtos</a> |
+            <a href="servicos.html">Serviços</a> |
+            <a href="cadastro.html">Agendamento</a> |
+            <a href="contato.html">Contato</a> |
+            <a href="ajuda.html">Ajuda</a>
+        </p>
+        <p>&copy; 2025 Dalcin's Petshop - Todos os direitos reservados.</p>
+        <p><small>Desenvolvido como projeto acadêmico - Disciplina: Fundamentos e Sistemas Web - PUC-ADS</small></p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- JavaScript personalizado (relógio + toggleTelebusca + validarFormulario) -->
+    <script src="js/script.js"></script>
+
+</body>
+</html>

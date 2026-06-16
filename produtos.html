@@ -4,162 +4,213 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Produtos - Dalcin's Petshop</title>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Estilo personalizado -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <!-- CABEÇALHO -->
-    <header>
-        <h1>Dalcin's Petshop</h1>
+    <!-- ==============================
+         CABEÇALHO
+         ============================== -->
+    <div class="faixa-topo">
+        <h1>🐾 Dalcin's Petshop</h1>
         <p>Tudo para o seu pet com amor e cuidado!</p>
         <p>Telefone: (51) 9 8765-4321 | Email: contato@dalcinspetshop.com.br</p>
-        <hr>
-        <nav>
-            <a href="index.html">Inicio</a> |
-            <a href="produtos.html">Produtos</a> |
-            <a href="servicos.html">Servicos</a> |
-            <a href="contato.html">Contato</a> |
-            <a href="ajuda.html">Ajuda</a>
-        </nav>
-        <hr>
-    </header>
+    </div>
 
-    <!-- CORPO -->
-    <main>
+    <!-- Relógio e saudação -->
+    <div id="relogio"></div>
+
+    <!-- ==============================
+         MENU DE NAVEGAÇÃO
+         ============================== -->
+    <nav class="navbar navbar-expand-lg" aria-label="Menu principal">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">🐾 Petshop</a>
+            <button class="navbar-toggler" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#menuNav"
+                    aria-controls="menuNav" aria-expanded="false"
+                    aria-label="Abrir menu de navegação">
+                <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="menuNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
+                    <li class="nav-item"><a class="nav-link" href="produtos.html">Produtos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="servicos.html">Serviços</a></li>
+                    <li class="nav-item"><a class="nav-link" href="cadastro.html">Agendamento</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contato.html">Contato</a></li>
+                    <li class="nav-item"><a class="nav-link" href="ajuda.html">Ajuda</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ==============================
+         CORPO - LISTAGEM DE PRODUTOS
+         ============================== -->
+    <main class="container mt-4">
+
         <h2>Nossos Produtos</h2>
         <p>Confira os produtos disponíveis em nossas categorias:</p>
 
-        <!-- CATEGORIA 1: ALIMENTAÇÃO -->
-        <h3 id="alimentacao">Categoria: Alimentacao</h3>
-        <hr>
+        <!-- ---- CATEGORIA 1: ALIMENTAÇÃO ---- -->
+        <h3 class="titulo-categoria" id="alimentacao">🥣 Alimentação</h3>
 
-        <table border="1" cellpadding="10" cellspacing="0">
-            <tr>
-                <!-- Produto 1 -->
-                <td align="center" width="300">
-                    <img src="https://placehold.co/200x150?text=Racao+Premium" alt="Racao Premium para Caes" width="200" height="150">
-                    <br><br>
-                    <b>Racao Premium para Caes Adultos</b>
-                    <br>
-                    <p>
-                        Racao super premium com frango e arroz para caes adultos de todos os portes.
-                        Rica em proteinas e vitaminas essenciais para a saude do seu cao.
-                        Embalagem de 15kg.
-                    </p>
-                    <b>Valor: R$ 189,90</b>
-                </td>
+        <div class="row">
 
-                <!-- Produto 2 -->
-                <td align="center" width="300">
-                    <img src="https://placehold.co/200x150?text=Racao+Gatos" alt="Racao para Gatos" width="200" height="150">
-                    <br><br>
-                    <b>Racao para Gatos Castrados</b>
-                    <br>
-                    <p>
-                        Racao especialmente formulada para gatos castrados.
-                        Ajuda no controle de peso e saude urinaria.
-                        Embalagem de 3kg.
-                    </p>
-                    <b>Valor: R$ 79,90</b>
-                </td>
-            </tr>
-        </table>
+            <!-- Produto 1 -->
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">Ração Premium para Cães Adultos</div>
+                    <div class="card-body">
+                        <img src="https://placehold.co/200x150/2e7d32/white?text=Racao+Premium"
+                             alt="Embalagem de ração premium para cães adultos - 15kg"
+                             width="200" height="150">
+                        <p class="mt-2">
+                            Ração super premium com frango e arroz para cães adultos de todos os portes.
+                            Rica em proteínas e vitaminas essenciais para a saúde do seu cão. Embalagem de 15kg.
+                        </p>
+                        <p class="preco">R$ 189,90</p>
+                    </div>
+                </div>
+            </div>
 
-        <br>
+            <!-- Produto 2 -->
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">Ração para Gatos Castrados</div>
+                    <div class="card-body">
+                        <img src="https://placehold.co/200x150/2e7d32/white?text=Racao+Gatos"
+                             alt="Embalagem de ração para gatos castrados - 3kg"
+                             width="200" height="150">
+                        <p class="mt-2">
+                            Ração especialmente formulada para gatos castrados.
+                            Ajuda no controle de peso e saúde urinária. Embalagem de 3kg.
+                        </p>
+                        <p class="preco">R$ 79,90</p>
+                    </div>
+                </div>
+            </div>
 
-        <!-- CATEGORIA 2: HIGIENE E BELEZA -->
-        <h3 id="higiene">Categoria: Higiene e Beleza</h3>
-        <hr>
+        </div>
 
-        <table border="1" cellpadding="10" cellspacing="0">
-            <tr>
-                <!-- Produto 3 -->
-                <td align="center" width="300">
-                    <img src="https://placehold.co/200x150?text=Shampoo+Pet" alt="Shampoo para Pets" width="200" height="150">
-                    <br><br>
-                    <b>Shampoo Neutro para Caes e Gatos</b>
-                    <br>
-                    <p>
-                        Shampoo de formula suave e neutra, ideal para uso frequente.
-                        Deixa o pelo macio, brilhoso e com cheiro agradavel.
-                        Frasco de 500ml.
-                    </p>
-                    <b>Valor: R$ 34,90</b>
-                </td>
+        <!-- ---- CATEGORIA 2: HIGIENE E BELEZA ---- -->
+        <h3 class="titulo-categoria" id="higiene">🛁 Higiene e Beleza</h3>
 
-                <!-- Produto 4 -->
-                <td align="center" width="300">
-                    <img src="https://placehold.co/200x150?text=Escova+Dental" alt="Escova Dental para Pets" width="200" height="150">
-                    <br><br>
-                    <b>Kit Escova e Pasta Dental para Pets</b>
-                    <br>
-                    <p>
-                        Kit completo com escova e pasta dental sabor frango para caes e gatos.
-                        Ajuda a prevenir problemas bucais e o mau halito no seu pet.
-                        Pasta de 65g + escova.
-                    </p>
-                    <b>Valor: R$ 28,50</b>
-                </td>
-            </tr>
-        </table>
+        <div class="row">
 
-        <br>
+            <!-- Produto 3 -->
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">Shampoo Neutro para Cães e Gatos</div>
+                    <div class="card-body">
+                        <img src="https://placehold.co/200x150/f57c00/white?text=Shampoo+Pet"
+                             alt="Frasco de shampoo neutro para pets - 500ml"
+                             width="200" height="150">
+                        <p class="mt-2">
+                            Shampoo de fórmula suave e neutra, ideal para uso frequente.
+                            Deixa o pelo macio, brilhoso e com cheiro agradável. Frasco de 500ml.
+                        </p>
+                        <p class="preco">R$ 34,90</p>
+                    </div>
+                </div>
+            </div>
 
-        <!-- CATEGORIA 3: ACESSÓRIOS -->
-        <h3 id="acessorios">Categoria: Acessorios</h3>
-        <hr>
+            <!-- Produto 4 -->
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">Kit Escova e Pasta Dental para Pets</div>
+                    <div class="card-body">
+                        <img src="https://placehold.co/200x150/f57c00/white?text=Kit+Dental"
+                             alt="Kit com escova e pasta dental sabor frango para pets"
+                             width="200" height="150">
+                        <p class="mt-2">
+                            Kit completo com escova e pasta dental sabor frango para cães e gatos.
+                            Ajuda a prevenir problemas bucais. Pasta 65g + escova.
+                        </p>
+                        <p class="preco">R$ 28,50</p>
+                    </div>
+                </div>
+            </div>
 
-        <table border="1" cellpadding="10" cellspacing="0">
-            <tr>
-                <!-- Produto 5 -->
-                <td align="center" width="300">
-                    <img src="https://placehold.co/200x150?text=Coleira+Pet" alt="Coleira para Caes" width="200" height="150">
-                    <br><br>
-                    <b>Coleira Ajustavel com Identificacao</b>
-                    <br>
-                    <p>
-                        Coleira resistente com fivela metalica e plaquinha de identificacao inclusa.
-                        Disponivel nos tamanhos P, M e G.
-                        Material: nylon reforçado.
-                    </p>
-                    <b>Valor: R$ 45,00</b>
-                </td>
+        </div>
 
-                <!-- Produto 6 -->
-                <td align="center" width="300">
-                    <img src="https://placehold.co/200x150?text=Cama+Pet" alt="Cama para Pets" width="200" height="150">
-                    <br><br>
-                    <b>Cama Ortopedica para Pets</b>
-                    <br>
-                    <p>
-                        Cama confortavel com espuma ortopedica, ideal para caes e gatos.
-                        Capa removivel e lavavel.
-                        Disponivel nos tamanhos P (50x40cm), M (70x55cm) e G (90x70cm).
-                    </p>
-                    <b>Valor: R$ 129,90</b>
-                </td>
-            </tr>
-        </table>
+        <!-- ---- CATEGORIA 3: ACESSÓRIOS ---- -->
+        <h3 class="titulo-categoria" id="acessorios">🎽 Acessórios</h3>
 
-        <br>
-        <p><a href="servicos.html">Ver nossos servicos &gt;&gt;</a></p>
+        <div class="row">
+
+            <!-- Produto 5 -->
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">Coleira Ajustável com Identificação</div>
+                    <div class="card-body">
+                        <img src="https://placehold.co/200x150/1565c0/white?text=Coleira+Pet"
+                             alt="Coleira ajustável de nylon com plaquinha de identificação"
+                             width="200" height="150">
+                        <p class="mt-2">
+                            Coleira resistente com fivela metálica e plaquinha de identificação inclusa.
+                            Disponível nos tamanhos P, M e G. Material: nylon reforçado.
+                        </p>
+                        <p class="preco">R$ 45,00</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Produto 6 -->
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">Cama Ortopédica para Pets</div>
+                    <div class="card-body">
+                        <img src="https://placehold.co/200x150/1565c0/white?text=Cama+Pet"
+                             alt="Cama ortopédica com espuma para cães e gatos - capa removível e lavável"
+                             width="200" height="150">
+                        <p class="mt-2">
+                            Cama confortável com espuma ortopédica, ideal para cães e gatos.
+                            Capa removível e lavável. Tamanhos: P (50x40cm), M (70x55cm), G (90x70cm).
+                        </p>
+                        <p class="preco">R$ 129,90</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="mt-3">
+            <a href="servicos.html" class="btn btn-petshop">Ver nossos serviços »</a>
+        </div>
+
     </main>
 
-    <!-- RODAPÉ -->
-    <hr>
+    <!-- ==============================
+         RODAPÉ
+         ============================== -->
     <footer>
-        <p><b>Dalcin's Petshop</b></p>
+        <p><strong>Dalcin's Petshop</strong></p>
         <p>CNPJ: 12.345.678/0001-99 | Rua dos Animais, 123 - Santa Cruz do Sul-RS</p>
         <p>Telefone: (51) 9 8765-4321 | Email: contato@dalcinspetshop.com.br</p>
         <p>
-            <a href="index.html">Inicio</a> |
+            <a href="index.html">Início</a> |
             <a href="produtos.html">Produtos</a> |
-            <a href="servicos.html">Servicos</a> |
+            <a href="servicos.html">Serviços</a> |
+            <a href="cadastro.html">Agendamento</a> |
             <a href="contato.html">Contato</a> |
             <a href="ajuda.html">Ajuda</a>
         </p>
         <p>&copy; 2025 Dalcin's Petshop - Todos os direitos reservados.</p>
-        <p><small>Desenvolvido como projeto academico - Disciplina: Fundamentos e Sistemas Web</small></p>
+        <p><small>Desenvolvido como projeto acadêmico - Disciplina: Fundamentos e Sistemas Web - PUC-ADS</small></p>
     </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- JavaScript personalizado -->
+    <script src="js/script.js"></script>
 
 </body>
 </html>

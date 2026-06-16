@@ -4,93 +4,161 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contato - Dalcin's Petshop</title>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Estilo personalizado -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <!-- CABEÇALHO -->
-    <header>
-        <h1>Dalcin's Petshop</h1>
+    <!-- ==============================
+         CABEÇALHO
+         ============================== -->
+    <div class="faixa-topo">
+        <h1>🐾 Dalcin's Petshop</h1>
         <p>Tudo para o seu pet com amor e cuidado!</p>
         <p>Telefone: (51) 9 8765-4321 | Email: contato@dalcinspetshop.com.br</p>
-        <hr>
-        <nav>
-            <a href="index.html">Inicio</a> |
-            <a href="produtos.html">Produtos</a> |
-            <a href="servicos.html">Servicos</a> |
-            <a href="contato.html">Contato</a> |
-            <a href="ajuda.html">Ajuda</a>
-        </nav>
-        <hr>
-    </header>
+    </div>
 
-    <!-- CORPO -->
-    <main>
+    <!-- Relógio e saudação -->
+    <div id="relogio"></div>
+
+    <!-- ==============================
+         MENU DE NAVEGAÇÃO
+         ============================== -->
+    <nav class="navbar navbar-expand-lg" aria-label="Menu principal">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">🐾 Petshop</a>
+            <button class="navbar-toggler" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#menuNav"
+                    aria-controls="menuNav" aria-expanded="false"
+                    aria-label="Abrir menu de navegação">
+                <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="menuNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
+                    <li class="nav-item"><a class="nav-link" href="produtos.html">Produtos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="servicos.html">Serviços</a></li>
+                    <li class="nav-item"><a class="nav-link" href="cadastro.html">Agendamento</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contato.html">Contato</a></li>
+                    <li class="nav-item"><a class="nav-link" href="ajuda.html">Ajuda</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ==============================
+         CORPO - CONTATO
+         ============================== -->
+    <main class="container mt-4">
+
         <h2>Entre em Contato</h2>
 
-        <h3>Informacoes de Contato</h3>
-        <p><b>Endereco:</b> Rua dos Animais, 123 - Santa Cruz do Sul-RS</p>
-        <p><b>Telefone:</b> (51) 9 8765-4321</p>
-        <p><b>Email:</b> contato@dalcinspetshop.com.br</p>
-        <p><b>Horario de Atendimento:</b> Segunda a Sabado das 8h00 as 18h00</p>
+        <div class="row">
 
-        <br>
-        <h3>Formulario de Contato</h3>
-        <p>Preencha o formulario abaixo que entraremos em contato em breve:</p>
+            <!-- Informações de contato -->
+            <div class="col-md-5">
+                <div class="card mb-4">
+                    <div class="card-header">📍 Informações</div>
+                    <div class="card-body">
+                        <p><strong>Endereço:</strong> Rua dos Animais, 123 - Santa Cruz do Sul-RS</p>
+                        <p><strong>Telefone:</strong> (51) 9 8765-4321</p>
+                        <p><strong>Email:</strong> contato@dalcinspetshop.com.br</p>
+                        <p><strong>Horário:</strong> Segunda a Sábado das 8h00 às 18h00</p>
+                    </div>
+                </div>
 
-        <form action="#" method="post">
+                <div class="card">
+                    <div class="card-header">📱 Redes Sociais</div>
+                    <div class="card-body">
+                        <p>📸 Instagram: @dalcinspetshop</p>
+                        <p>👍 Facebook: /dalcinspetshop</p>
+                        <p>💬 WhatsApp: (51) 9 8765-4321</p>
+                    </div>
+                </div>
+            </div>
 
-            <label for="nome">Nome completo:</label><br>
-            <input type="text" id="nome" name="nome" size="40"><br><br>
+            <!-- Formulário de contato -->
+            <div class="col-md-7">
+                <div class="card">
+                    <div class="card-header">✉️ Formulário de Contato</div>
+                    <div class="card-body">
+                        <form action="#" method="post">
 
-            <label for="email">Email:</label><br>
-            <input type="email" id="email" name="email" size="40"><br><br>
+                            <div class="mb-3">
+                                <label for="nome" class="form-label">Nome completo:</label>
+                                <input type="text" class="form-control" id="nome" name="nome"
+                                       placeholder="Seu nome completo">
+                            </div>
 
-            <label for="telefone">Telefone:</label><br>
-            <input type="text" id="telefone" name="telefone" size="20"><br><br>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">E-mail:</label>
+                                <input type="email" class="form-control" id="email" name="email"
+                                       placeholder="seuemail@exemplo.com">
+                            </div>
 
-            <label for="assunto">Assunto:</label><br>
-            <select id="assunto" name="assunto">
-                <option value="">-- Selecione --</option>
-                <option value="agendamento">Agendamento de Servico</option>
-                <option value="telebusca">Tele-busca</option>
-                <option value="produto">Duvida sobre Produto</option>
-                <option value="outro">Outro</option>
-            </select><br><br>
+                            <div class="mb-3">
+                                <label for="telefone" class="form-label">Telefone:</label>
+                                <input type="tel" class="form-control" id="telefone" name="telefone"
+                                       placeholder="(51) 9 0000-0000">
+                            </div>
 
-            <label for="mensagem">Mensagem:</label><br>
-            <textarea id="mensagem" name="mensagem" rows="5" cols="40"></textarea><br><br>
+                            <div class="mb-3">
+                                <label for="assunto" class="form-label">Assunto:</label>
+                                <select class="form-select" id="assunto" name="assunto">
+                                    <option value="">-- Selecione --</option>
+                                    <option value="agendamento">Agendamento de Serviço</option>
+                                    <option value="telebusca">Tele-busca</option>
+                                    <option value="produto">Dúvida sobre Produto</option>
+                                    <option value="outro">Outro</option>
+                                </select>
+                            </div>
 
-            <input type="submit" value="Enviar Mensagem">
-            <input type="reset" value="Limpar">
+                            <div class="mb-3">
+                                <label for="mensagem" class="form-label">Mensagem:</label>
+                                <textarea class="form-control" id="mensagem" name="mensagem"
+                                          rows="4" placeholder="Escreva sua mensagem..."></textarea>
+                            </div>
 
-        </form>
+                            <button type="submit" class="btn btn-petshop me-2">Enviar Mensagem</button>
+                            <button type="reset" class="btn btn-secondary">Limpar</button>
 
-        <br>
-        <h3>Redes Sociais</h3>
-        <p>Nos siga nas redes sociais para novidades e promocoes:</p>
-        <ul>
-            <li>Instagram: @dalcinspetshop</li>
-            <li>Facebook: /petshopdalcinspetshop</li>
-            <li>WhatsApp: (51) 9 8765-4321</li>
-        </ul>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
     </main>
 
-    <!-- RODAPÉ -->
-    <hr>
+    <!-- ==============================
+         RODAPÉ
+         ============================== -->
     <footer>
-        <p><b>Dalcin's Petshop</b></p>
+        <p><strong>Dalcin's Petshop</strong></p>
         <p>CNPJ: 12.345.678/0001-99 | Rua dos Animais, 123 - Santa Cruz do Sul-RS</p>
         <p>Telefone: (51) 9 8765-4321 | Email: contato@dalcinspetshop.com.br</p>
         <p>
-            <a href="index.html">Inicio</a> |
+            <a href="index.html">Início</a> |
             <a href="produtos.html">Produtos</a> |
-            <a href="servicos.html">Servicos</a> |
+            <a href="servicos.html">Serviços</a> |
+            <a href="cadastro.html">Agendamento</a> |
             <a href="contato.html">Contato</a> |
             <a href="ajuda.html">Ajuda</a>
         </p>
         <p>&copy; 2025 Dalcin's Petshop - Todos os direitos reservados.</p>
-        <p><small>Desenvolvido como projeto academico - Disciplina: Fundamentos e Sistemas Web</small></p>
+        <p><small>Desenvolvido como projeto acadêmico - Disciplina: Fundamentos e Sistemas Web - PUC-ADS</small></p>
     </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- JavaScript personalizado -->
+    <script src="js/script.js"></script>
 
 </body>
 </html>
